@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài tập của claude</title>
+</head>
+<body>
+<h2>Máy tính đơn giản</h2>
+<input type="number" id="nhapso1" placeholder="Nhập số">
+<select id="pheptinh" style="width:auto">
+  <option value="">---chọn phép tính---</option>
+  <option value="+">+</option>
+  <option value="-">-</option>
+  <option value="*">*</option>
+  <option value="/">/</option>
+</select>
+<input type="number" id="nhapso2" placeholder="Nhập số">
+<button onclick="tinh()">Kết quả</button>
+<p id="ketqua"></p>
+<script>
+  function tinh() {
+    let laygiatri2 = document.getElementById("nhapso2").value;
+    let phepTinh = document.getElementById("pheptinh").value;
+    let so1 = Number(document.getElementById("nhapso1").value);
+    let so2 = Number(laygiatri2);
+    let ketQua;
+    if (phepTinh === "+") {
+      ketQua = so1 + so2;
+    } else if (phepTinh === "-") {
+      ketQua = so1 - so2;
+    } else if (phepTinh === "*") {
+      ketQua = so1 * so2;
+    } else if (phepTinh === "/") {
+      if (so2 === 0) {
+        ketQua = "Không thể chia hết cho 0"
+      } else {
+        ketQua = so1 / so2;
+      }
+    }
+    document.getElementById("ketqua").innerHTML = "Kết quả là:" + ketQua;
+  }
+</script>
+</body>
+</html>
