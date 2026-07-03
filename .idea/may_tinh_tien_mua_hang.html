@@ -18,11 +18,30 @@
 <p id="ketqua"></p>
 <script>
   function tinh() {
-  let soLuong = Number(document.getElementById("soluong").value);
-  let sanpham = document.getElementById("sanPham").value;
-  let tinhtien;
-  if (sanpham===)
-  }
+    let soLuong = Number(document.getElementById("soluong").value);
+    let sanpham = document.getElementById("sanPham").value;
+    let thanhTien;
+    let gia;
+    if (soLuong <= 0) {
+      gia = "Số lượng không hợp lệ!"
+    } else if (sanpham===""){
+      gia="Vui lòng chọn sản phẩm"
+    }else {
+      if (sanpham === "but_bi") {
+        thanhTien = 5000;
+      } else {
+        if (sanpham === "vo") {
+          thanhTien = 15000;
+        } else if (sanpham === "sach") {
+          thanhTien = 50000;
+        } else if (sanpham === "balo") {
+          thanhTien = 200000;
+        }
+      }
+      gia=`Tổng tiền ${soLuong*thanhTien} đ`
+    }
+    document.getElementById("ketqua").innerHTML=gia;
+    }
 </script>
 </body>
 </html>
